@@ -9,8 +9,8 @@ on:
 env:
   # `BASE_URL` determines the website is served from, including CSS & JS assets
   # You may need to change this to `BASE_URL: ''`
-  #BASE_URL: /${{ github.event.repository.name }}
-  BASE_URL: https://pages.github.schneider-electric.com/apc-docs-tdc-fw/${{ github.event.repository.name }}
+  BASE_URL: /${{ github.event.repository.name }}
+  #BASE_URL: https://pages.github.schneider-electric.com/apc-docs-tdc-fw/${{ github.event.repository.name }}
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -27,8 +27,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Setup Pages
