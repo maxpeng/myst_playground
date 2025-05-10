@@ -45,7 +45,8 @@ jobs:
       - name: Upload artifact
         # tag v3, v3.0.1
         #uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
-        uses: apc-actions/upload-pages-artifact@7c03737d976d9689e208231e6ea0c9d81b21bf19
+        #uses: apc-actions/upload-pages-artifact@7c03737d976d9689e208231e6ea0c9d81b21bf19
+        uses: apc-actions/upload-pages-artifact
         with:
           path: './_build/html'
       - name: Deploy to GitHub Pages
