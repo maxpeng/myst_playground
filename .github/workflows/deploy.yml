@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Setup Pages
-        uses: apc-actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
 
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         # v4.0.2
@@ -44,9 +44,9 @@ jobs:
         run: myst build --html
       - name: Upload artifact
         # tag v3, v3.0.1
-        uses: apc-actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         with:
           path: './_build/html'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: apc-actions/deploy-pages@75c1124b142c363849aac2d23c005a4faf87c90f
+        uses: actions/deploy-pages@75c1124b142c363849aac2d23c005a4faf87c90f
