@@ -26,6 +26,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      BASE_URL: https://pages.github.schneider-electric.com/apc-docs-tdc-fw/${{ github.event.repository.name }}
     #runs-on: ubuntu-latest
     runs-on: self-hosted
     steps:
