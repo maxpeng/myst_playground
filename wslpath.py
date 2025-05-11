@@ -9,9 +9,11 @@ def windows_to_wsl_path(windows_path):
     :param windows_path: The Windows path to be converted.
     :return: The converted WSL path.
     """
+    print("windows_path:", windows_path)
     if ':' in windows_path:
         drive, rest = windows_path.split(':', 1)
-        result = f"/mnt/{drive.lower()}/{rest.replace('\\\\', '/')}"
+        print(r"path_without_drive:", rest)
+        result = f"/mnt/{drive.lower()}/{rest.replace(r'\\', '/')}"
         return result
     else:
         raise ValueError("Invalid Windows path format")
