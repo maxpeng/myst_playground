@@ -57,11 +57,11 @@ jobs:
         # tag v3, v3.0.1
         #uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         #uses: apc-actions/upload-pages-artifact@7c03737d976d9689e208231e6ea0c9d81b21bf19
-        uses: apc-actions/upload-pages-artifact@88f9361a92f6df8f8164b6969eed2cb3df64374d
+        uses: apc-actions/upload-pages-artifact@2d163be3ddce01512f3eea7ac5b7023b5d643ce1
         with:
           #path: './_build/html'
           path: ${{ steps.convert_output_path.outputs.wsl_path }}
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@2d163be3ddce01512f3eea7ac5b7023b5d643ce1
+        uses: actions/deploy-pages@75c1124b142c363849aac2d23c005a4faf87c90f
