@@ -12,8 +12,7 @@ def windows_to_wsl_path(windows_path):
     print("windows_path:", windows_path)
     if ':' in windows_path:
         drive, rest = windows_path.split(':', 1)
-        print(r"path_without_drive:", rest)
-        result = f"/mnt/{drive.lower()}/{rest.replace(r'\\', '/')}"
+        result = f"/mnt/{drive.lower()}{rest.replace('\\', '/')}"
         return result
     else:
         raise ValueError("Invalid Windows path format")
@@ -26,5 +25,3 @@ if __name__ == "__main__":
     with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as f:
         f.write(f"wsl_path={wsl_path}")
     sys.exit(0)
-
-
