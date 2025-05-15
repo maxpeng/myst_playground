@@ -45,15 +45,11 @@ jobs:
 
       - name: Install MyST Markdown
         run: npm install -g mystmd
+
       - name: Build HTML Assets
         env:
           NODE_EXTRA_CA_CERTS: /usr/local/share/ca-certificates/ZscalerRootCA.crt
         run: myst build --html
-
-      - name: Convert output path
-        id: convert_output_path
-        run: |
-          python wsl_path.py _build/html
 
       - name: Upload artifact
         # tag v3, v3.0.1
@@ -61,8 +57,8 @@ jobs:
         #uses: apc-actions/upload-pages-artifact@7c03737d976d9689e208231e6ea0c9d81b21bf19
         #uses: apc-actions/upload-pages-artifact@2d163be3ddce01512f3eea7ac5b7023b5d643ce1
         with:
-          #path: './_build/html'
-          path: ${{ steps.convert_output_path.outputs.wsl_path }}
+          path: './_build/html'
+          #path: ${{ steps.convert_output_path.outputs.wsl_path }}
 
       - name: Deploy to GitHub Pages
         id: deployment
