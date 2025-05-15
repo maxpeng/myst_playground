@@ -46,6 +46,8 @@ jobs:
       - name: Install MyST Markdown
         run: npm install -g mystmd
       - name: Build HTML Assets
+        env:
+          NODE_EXTRA_CA_CERTS: /usr/local/share/ca-certificates/ZscalerRootCA.crt      
         run: myst build --html
 
       - name: Convert output path
