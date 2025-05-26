@@ -29,13 +29,16 @@ jobs:
     #runs-on: ubuntu-latest
     runs-on: self-hosted
     steps:
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3
+        # tag v5.2.0
         with:
             python-version: '3.12'
 
+      # tag v4.2.2.
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Setup Pages
+        # tag v5.0.0.
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
 
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
@@ -53,13 +56,16 @@ jobs:
 
       - name: Upload artifact
         # tag v3, v3.0.1
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        #uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         #uses: apc-actions/upload-pages-artifact@7c03737d976d9689e208231e6ea0c9d81b21bf19
         #uses: apc-actions/upload-pages-artifact@2d163be3ddce01512f3eea7ac5b7023b5d643ce1
+        # tag v2.0.0
+        uses: actions/upload-pages-artifact@9c071e6bed590ca0b53a706c2d01ad1c39faf659
         with:
           path: './_build/html'
           #path: ${{ steps.convert_output_path.outputs.wsl_path }}
 
       - name: Deploy to GitHub Pages
         id: deployment
+        # tag v1.2.1
         uses: actions/deploy-pages@75c1124b142c363849aac2d23c005a4faf87c90f
